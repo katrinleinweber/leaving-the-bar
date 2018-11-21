@@ -1,11 +1,8 @@
 ################################################
 # J.Goedhart | @joachimgoedhart | 2017-03-07
 # j.goedhart@uva.nl | http://www.molecularcytology.nl/Joachim/
-################################################
-# Commands that can be executed in R/Rstudio to create graphs
-# Requires the library 'ggplot2': http://ggplot2.org
-################################################
 
+library(ggplot2)
 
 ################################################
 # Read the data
@@ -15,7 +12,6 @@ data_summary <-
 data_tidy <-
   read.csv("https://zenodo.org/record/375944/files/Data_tidy.csv?download=1")
 
-library(ggplot2)
 ################################################
 # Plot Bargraph with SEM
 
