@@ -105,22 +105,3 @@ ggplot(data_tidy, aes(x = Condition, y = ratio)) +
   ggtitle("Boxplot & data") +
   ylim(0, 2) +
   theme_classic()
-
-################################################
-# Alternatives (that were not used for the animated GIF)
-################################################
-
-# Plot mean with dots and 95%CI
-
-ggplot(data_summary, aes(x = Condition, y = mean)) +
-  geom_errorbar(aes(ymin = mean - CI,
-                    ymax = mean + CI)) +
-  geom_jitter(
-    data = data_tidy,
-    aes(Condition, ratio),
-    position = position_jitter(0.3),
-    color = "grey40"
-  ) +
-  ggtitle("95% CI (mean) & data") +
-  ylim(0, 2) +
-  theme_classic()
