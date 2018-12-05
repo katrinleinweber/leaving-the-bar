@@ -16,15 +16,15 @@ data_tidy <-
 
 ################################################
 
-ggplot(data_summary, aes(x = Condition, y = mean)) +
-  geom_errorbar(aes(ymin = mean,
-                    ymax = mean)) +
+ggplot(data_summary, aes(x = Condition, y = median)) +
+  geom_errorbar(aes(ymin = median,
+                    ymax = median)) +
   geom_jitter(
     data = data_tidy,
     aes(Condition, ratio),
     position = position_jitter(0.3),
     color = "grey40"
   ) +
-  ggtitle("Mean & data") +
+  ggtitle("Median & data") +
   ylim(0, 2) +
   theme_classic()
