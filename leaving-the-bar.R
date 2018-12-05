@@ -16,15 +16,16 @@ data_tidy <-
 
 ################################################
 
-ggplot(data_summary, aes(x = Condition, y = median)) +
-  geom_errorbar(aes(ymin = median - CImedian,
-                    ymax = median + CImedian)) +
+ggplot(data_tidy, aes(x = Condition, y = ratio)) +
+  geom_boxplot(fill = "grey90",
+               notch = TRUE,
+               outlier.color = NA) +
   geom_jitter(
     data = data_tidy,
     aes(Condition, ratio),
     position = position_jitter(0.3),
     color = "grey40"
   ) +
-  ggtitle("95% CI (median) & data") +
+  ggtitle("Boxplot & data") +
   ylim(0, 2) +
   theme_classic()
