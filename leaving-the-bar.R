@@ -17,14 +17,14 @@ data_tidy <-
 ################################################
 
 ggplot(data_summary, aes(x = Condition, y = median)) +
-  geom_errorbar(aes(ymin = median,
-                    ymax = median)) +
+  geom_errorbar(aes(ymin = median - CImedian,
+                    ymax = median + CImedian)) +
   geom_jitter(
     data = data_tidy,
     aes(Condition, ratio),
     position = position_jitter(0.3),
     color = "grey40"
   ) +
-  ggtitle("Median & data") +
+  ggtitle("95% CI (median) & data") +
   ylim(0, 2) +
   theme_classic()
