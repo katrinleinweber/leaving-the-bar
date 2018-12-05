@@ -19,9 +19,12 @@ data_tidy <-
 ggplot(data_summary, aes(x = Condition, y = mean)) +
   geom_errorbar(aes(ymin = mean,
                     ymax = mean)) +
-  geom_errorbar(aes(ymin = mean - sem,
-                    ymax = mean + sem),
-                width = .4) +
-  ggtitle("Mean & SEM") +
+  geom_jitter(
+    data = data_tidy,
+    aes(Condition, ratio),
+    position = position_jitter(0.3),
+    color = "grey40"
+  ) +
+  ggtitle("Mean & data") +
   ylim(0, 2) +
   theme_classic()
