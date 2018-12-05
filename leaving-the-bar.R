@@ -17,10 +17,11 @@ data_tidy <-
 ################################################
 
 ggplot(data_summary, aes(x = Condition, y = mean)) +
-  geom_bar(stat = "identity") +
   geom_errorbar(aes(ymin = mean,
+                    ymax = mean)) +
+  geom_errorbar(aes(ymin = mean - sem,
                     ymax = mean + sem),
                 width = .4) +
-  ggtitle("Barplot & SEM") +
+  ggtitle("Mean & SEM") +
   ylim(0, 2) +
   theme_classic()
