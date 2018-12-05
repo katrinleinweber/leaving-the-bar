@@ -1,6 +1,8 @@
 ################################################
 # J.Goedhart | @joachimgoedhart | 2017-03-07
 # j.goedhart@uva.nl | http://www.molecularcytology.nl/Joachim/
+# modified by Katrin Leinweber | 2018-12-05
+# katrin.leinweber@tib.eu | https://github.com/katrinleinweber
 
 library(ggplot2)
 
